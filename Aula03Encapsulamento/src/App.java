@@ -6,8 +6,19 @@ public class App {
 
         System.out.println("Insira o valor do boleto: ");
         double valorBoleto = sc.nextDouble();
+
+        while (valorBoleto <= 0) {
+            System.out.println("Valor Inválido, Informe o Valor do Boleto: ");
+            valorBoleto = sc.nextDouble();
+        }
+
         System.out.println("Insira o valor do pagamento: ");
         double valorPago = sc.nextDouble();
+
+        while (valorPago <= 0) {
+            System.out.println("Valor Inválido, Informe o Valor do Pagamento: ");
+            valorPago = sc.nextDouble();
+        }
 
         Boleto boletoDoWill = new Boleto();
         boletoDoWill.setValorBoleto(valorBoleto);

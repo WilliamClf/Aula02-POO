@@ -46,10 +46,12 @@ public class Boleto {
     }
 
     void printStatusBoleto(double valor) {
-        if (valor <= 0) {
+        if (valor == 0) {
             System.out.println("*Boleto Pago!");
-        } else {
+        } else if (valor >= 0) {
             System.out.printf("*Boleto Pago parcialmente, faltam %.2f R$\n", valor);
+        } else {
+            System.out.println("Seu pagamento é maior que o valor do boleto!");
         }
     }
 
@@ -63,7 +65,6 @@ public class Boleto {
         } else {
             System.out.println("*Vencimento: Ainda não!");
         }
-
         double valor = this.pagar();
         this.printStatusBoleto(valor);
         System.out.println("****************");
