@@ -30,7 +30,6 @@ public class App {
         al.setNota1(nota1);
         al.setNota2(nota2);
         al.setNota3(nota3);
-        al.calcularMedia();
         al.imprimirFichaAluno();
 
     }

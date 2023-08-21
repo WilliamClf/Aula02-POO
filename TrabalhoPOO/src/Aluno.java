@@ -77,7 +77,17 @@ public class Aluno {
    }
 
    public boolean validar() {
-      return nome.length() >= 3 && numMatricula.length() >= 3 && endereco.length() >= 3;
+      boolean validacao = nome.length() >= 3 &&
+            numMatricula.length() >= 3 &&
+            endereco.length() >= 3;
+
+      if (validacao) {
+         System.out.print("Cadastro válido!:");
+      } else {
+         System.out.print("Cadastro Inválido!:");
+      }
+      return validacao;
+
    }
 
    void imprimirFichaAluno() {
@@ -87,8 +97,7 @@ public class Aluno {
       System.out.println("Endereço: " + getEndereco());
       double media = this.calcularMedia();
       System.out.println(media);
-      Boolean validacao = this.validar();
-      System.out.println("Cadastro Válido: "+validacao);
+      System.out.println(validar());
       System.out.println("*****************");
    }
 }
